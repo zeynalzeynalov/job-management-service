@@ -1,4 +1,4 @@
-# Job Management Service
+# Job management service
 
 ### Applied software design patterns:
 
@@ -9,7 +9,7 @@ In order to have only one unique instance of JobManagementService object, constr
 
 **State:**
 
-Applied to Job states for having a state machine implementation to design flow between different states. Flexibility is, any new job state can be added to solution by implementing IJobState interface. And also transition between these states can be handled with IJobState .changeState() method.
+Applied to Job states for having a state machine implementation to design flow between different states. Flexibility is, any new job state can be added to solution by implementing IJobState interface. And also transition between these states can be handled with ```IJobState.changeState()``` method.
 
 **Template Method:**
 
@@ -18,7 +18,7 @@ As we can have any type of Job, each Job type will have its own actions to be ex
 protected abstract void actionStepsOfJob() throws JobExecutionException;
 ```
 
-This method can be overridden in new Job type class to add related necessary actions in it. Reason for this implementation is we want to change state of Job after execution of Job.actionStepsOfJob() method. So run() method inside Job class firstly execute actionStepsOfJob() then perform Job state change with state.nextState(). To hide actionStepsOfJob() inside Job, protected modifier applied.
+This method can be overridden in new Job type class to add related necessary actions in it. Reason for this implementation is we want to change state of Job after execution of ```Job.actionStepsOfJob()``` method. So run() method inside Job class firstly execute actionStepsOfJob() then perform Job state change with state.nextState(). To hide actionStepsOfJob() inside Job, protected modifier applied.
 
 **Factory:**
 
