@@ -18,7 +18,7 @@ As we can have any type of Job, each Job type will have its own actions to be ex
 protected abstract void actionStepsOfJob() throws JobExecutionException;
 ```
 
-This method can be overridden in new Job type class to add related necessary actions in it. Reason for this implementation is we want to change state of Job after execution of ```Job.actionStepsOfJob()``` method. So run() method inside Job class firstly execute actionStepsOfJob() then perform Job state change with state.nextState(). To hide actionStepsOfJob() inside Job, protected modifier applied.
+This method can be overridden in new Job type class to add related necessary actions in it. Reason for this implementation is we want to change state of Job after execution of ```Job.actionStepsOfJob()``` method. So run() method inside Job class firstly execute ```actionStepsOfJob()``` then perform Job state change with ```state.nextState()```. To hide ```actionStepsOfJob()``` inside Job, protected modifier applied.
 
 **Factory:**
 
