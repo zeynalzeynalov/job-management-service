@@ -22,4 +22,4 @@ This method can be overridden in new Job type class to add related necessary act
 
 **Factory:**
 
-To create different types of Jobs, JobFactory class is implemented. Factory create Job instance from name of related Job type class. Also can create a random Job type instance.
+To create different types of Jobs, `JobFactory` class is implemented. Factory create Job instance from name of related Job type class. Also can create a random Job type instance.
