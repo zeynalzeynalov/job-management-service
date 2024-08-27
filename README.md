@@ -4,7 +4,7 @@
 
 **Thread Safe Singleton:**
 
-In order to have only one unique instance of JobManagementService object, constructor is hidden and added public method getInstance(). Also ConfigurationManager and JobPriorityManager obey singleton pattern.
+In order to have only one unique instance of JobManagementService object, constructor is hidden and added public method getInstance(). Also `ConfigurationManager` and `JobPriorityManager` obey singleton pattern.
 
 
 **State:**
@@ -18,8 +18,10 @@ As we can have any type of Job, each Job type will have its own actions to be ex
 protected abstract void actionStepsOfJob() throws JobExecutionException;
 ```
 
-This method can be overridden in new Job type class to add related necessary actions in it. Reason for this implementation is we want to change state of Job after execution of ```Job.actionStepsOfJob()``` method. So run() method inside Job class firstly execute ```actionStepsOfJob()``` then perform Job state change with ```state.nextState()```. To hide ```actionStepsOfJob()``` inside Job, protected modifier applied.
+This method can be overridden in new Job type class to add related necessary actions in it. Reason for this implementation is we want to change state of Job after execution of ```Job.actionStepsOfJob()``` method. 
+So run() method inside Job class firstly execute ```actionStepsOfJob()``` then perform Job state change with ```state.nextState()```. To hide ```actionStepsOfJob()``` inside Job, protected modifier applied.
 
 **Factory:**
 
-To create different types of Jobs, `JobFactory` class is implemented. Factory create Job instance from name of related Job type class. Also can create a random Job type instance.
+To create different types of Jobs, `JobFactory` class is implemented. 
+Factory create Job instance from name of related Job type class. Also can create a random Job type instance.
